@@ -24,11 +24,13 @@ Dengan adanya sistem ini, proses pendataan siswa tidak lagi harus dilakukan seca
          - Menjaga keamanan akses aplikasi.
 
 🖥️*Teknologi yang Digunakan*
+
  - Frontend: HTML, CSS, JavaScript
  - Backend: PHP
  - Database: MySQL (untuk penyimpanan data siswa)
 
 👥*Role Pengguna*
+
   1. Admin
  - Login ke sistem.
  - Menginput, mengedit, dan menghapus data siswa.
