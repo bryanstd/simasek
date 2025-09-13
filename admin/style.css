@@ -7,9 +7,11 @@
 }
 
 body {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
+  background: #f3f4f6;
 }
 
+/* ===== Sidebar ===== */
 .sidebar {
   position: fixed;
   left: 0;
@@ -64,19 +66,26 @@ body {
   color: #ffcccc;
 }
 
+/* ===== Content Area ===== */
 .content {
   margin-left: 220px;
+  min-height: 100vh;
 }
 
+/* ===== Topbar ===== */
 .topbar {
   display: flex;
-  font-size: 35px;
+  font-size: 28px;
+  font-weight: bold;
   justify-content: space-between;
   align-items: center;
-  color: rgb(0, 0, 0);
+  color: #111827;
   padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
 }
 
+/* ===== Dashboard / Sections ===== */
 .dashboard {
   flex-direction: column;
   display: flex;
@@ -88,28 +97,32 @@ body {
 .dashboard .card {
   flex: 1;
   min-width: 200px;
-  background: #f9fafb;
+  background: #ffffff;
   padding: 1rem;
   border-radius: 8px;
   border: 1px solid #e5e7eb;
-  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
+/* ===== Card Headings ===== */
 .dashboard .card h3 {
   color: #374151;
+  margin-bottom: 0.5rem;
 }
 
+/* ===== Numbers / Highlight Text ===== */
 .dashboard .card p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #2563eb;
 }
 
+/* ===== Latest List ===== */
 .latest-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: left; /* biar rapi ke kiri */
+  text-align: left;
 }
 
 .latest-list li {
@@ -122,3 +135,119 @@ body {
 .latest-list li:last-child {
   border-bottom: none;
 }
+
+/* ===== Form Styling ===== */
+form label {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #f9fafb;
+}
+
+form textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+form button {
+  margin-top: 12px;
+  padding: 10px;
+  width: 100%;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #1d4ed8;
+}
+
+/* ===== Grid for Siswa Cards (horizontal scroll) ===== */
+.siswa-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.siswa-card {
+  min-width: 250px;
+  flex-shrink: 0;
+  background: #f9fafb;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.siswa-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.siswa-card h4 {
+  margin: 0 0 6px;
+  color: #111827;
+  font-size: 1.05rem;
+}
+
+.siswa-card p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* ===== Table Styling (CRUD Siswa) ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #111827;
+}
+
+.action-btn {
+  padding: 6px 10px;
+  margin-right: 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-read { background: #3b82f6; color: #fff; }
+.btn-update { background: #f59e0b; color: #fff; }
+.btn-delete { background: #ef4444; color: #fff; }
+
+.btn-read:hover { background: #2563eb; }
+.btn-update:hover { background: #d97706; }
+.btn-delete:hover { background: #dc2626; }

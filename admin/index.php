@@ -36,8 +36,8 @@ function siswaTerbaru() {
     <h2 class="logo">SimaSek</h2>
     <nav>
       <a href="#" class="active">Dashboard</a>
-      <a href="/simasek/admin/datasiswa.php">Data Siswa</a>
-      <a href="/simasek/logout.php" class="logout">Logout</a>
+      <a href="/admin/datasiswa.php">Data Siswa</a>
+      <a href="/logout.php" class="logout">Logout</a>
     </nav>
   </aside>
 

@@ -8,10 +8,10 @@ $error = "";
 
 if (!empty($_SESSION['usertype']) && !empty($_SESSION['role'])) {
     if ($_SESSION['role'] === 'admin') {
-        header("Location: /simasek/admin/");
+        header("Location: /admin/");
         exit;
     } elseif ($_SESSION['role'] === 'siswa') {
-        header("Location: /simasek/siswa/");
+        header("Location: /siswa/");
         exit;
     }
 }
@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $islogin = true;
 
         if ($check['role'] === 'admin') {
-            header("Location: /simasek/admin/");
+            header("Location: /admin/");
             exit;
         } elseif ($check['role'] === 'siswa') {
-            header("Location: /simasek/siswa/");
+            header("Location: /siswa/");
             exit;
         } else {
             $error = "Role tidak dikenali!";

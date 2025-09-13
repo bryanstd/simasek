@@ -5,5 +5,5 @@ $_SESSION = [];
 session_unset();
 session_destroy();
 
-header("Location: /simasek");
+header("Location: /");
 exit;
