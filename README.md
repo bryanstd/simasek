@@ -29,6 +29,6 @@ Dengan adanya sistem ini, proses pendataan siswa tidak lagi harus dilakukan seca
  - Menginput, mengedit, dan menghapus data siswa.
  - Melihat jumlah siswa yang terdaftar.
 
-   2. Siswa
+ 2. Siswa
  - Login ke sistem.
  - Melihat biodata diri yang sudah dimasukkan oleh admin.
