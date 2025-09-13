@@ -2,6 +2,7 @@ SimaSek adalah aplikasi berbasis web yang bertujuan untuk memudahkan siswa dalam
 Dengan adanya sistem ini, proses pendataan siswa tidak lagi harus dilakukan secara manual, melainkan dapat diakses langsung melalui dashboard sederhana dan interaktif.
 
 ✨ *Fitur Utama*
+   
    🔐1. Login Multiuser
          - Login sebagai Admin atau Siswa.
 
