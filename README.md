@@ -4,19 +4,23 @@ Dengan adanya sistem ini, proses pendataan siswa tidak lagi harus dilakukan seca
 ✨ *Fitur Utama*
    
    🔐1. Login Multiuser
+   
          - Login sebagai Admin atau Siswa.
 
    🏠2. Dashboard
+   
          - Menampilkan total siswa yang terdaftar.
          - Menampilkan daftar 10 siswa terbaru.
 
    👨‍🎓3. Manajemen Data Siswa
+   
          - Tambah siswa baru dengan form input sederhana.
          - Nomor Induk Siswa (NIS) dibuat otomatis.
          - Edit dan hapus data siswa.
          - Daftar siswa dapat dilihat dengan mudah dalam tabel.
 
    🚪4. Logout
+   
          - Menjaga keamanan akses aplikasi.
 
 🖥️*Teknologi yang Digunakan*
