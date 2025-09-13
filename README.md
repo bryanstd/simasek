@@ -28,6 +28,7 @@ Dengan adanya sistem ini, proses pendataan siswa tidak lagi harus dilakukan seca
  - Frontend: HTML, CSS, JavaScript
  - Backend: PHP
  - Database: MySQL (untuk penyimpanan data siswa)
+ - UI/UX: FIGMA
 
 👥*Role Pengguna*
 
