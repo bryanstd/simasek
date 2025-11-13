@@ -62,9 +62,9 @@ Menyimpan log aktivitas dari admin (misalnya menambah atau menghapus siswa).
 | `action` | VARCHAR(255) | Deskripsi aktivitas yang dilakukan |
 
 Contoh data `aktivitas_terakhir`:
-- `Siswa baru ditambahkan: NIS 1250, Nama: fawijfoawj`
+- `Siswa baru ditambahkan: NIS 1250, Nama: Marvel`
 - `Data siswa diperbarui: Ayu Lestari`
-- `Siswa dihapus: Stela Cantik`
+- `Siswa dihapus: Marvel`
 
 ---
 
