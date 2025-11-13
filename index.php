@@ -8,10 +8,10 @@ $error = "";
 
 if (!empty($_SESSION['usertype']) && !empty($_SESSION['role'])) {
     if ($_SESSION['role'] === 'admin') {
-        header("Location: /admin/");
+        header("Location: ./admin/");
         exit;
     } elseif ($_SESSION['role'] === 'siswa') {
-        header("Location: /siswa/");
+        header("Location: ./siswa/");
         exit;
     }
 }

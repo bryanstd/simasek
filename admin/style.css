@@ -243,11 +243,3 @@ th {
   text-decoration: none;
   display: inline-block;
 }
-
-.btn-read { background: #3b82f6; color: #fff; }
-.btn-update { background: #f59e0b; color: #fff; }
-.btn-delete { background: #ef4444; color: #fff; }
-
-.btn-read:hover { background: #2563eb; }
-.btn-update:hover { background: #d97706; }
-.btn-delete:hover { background: #dc2626; }
