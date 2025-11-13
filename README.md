@@ -72,10 +72,10 @@ Contoh data `aktivitas_terakhir`:
 
 | Kategori | Teknologi |
 |-----------|------------|
-| **Frontend** | HTML, CSS, JavaScript (untuk interaktivitas form & validasi) |
-| **Backend** | PHP 8.1 |
-| **Database** | MySQL 8.0 |
-| **Server Environment** | XAMPP / Laragon / LAMP |
+| **Frontend** | HTML, CSS |
+| **Backend** | PHP |
+| **Database** | MySQL |
+| **Server Environment** | Laragon |
 | **UI/UX Design** | Figma |
 
 ---
@@ -86,7 +86,7 @@ Langkah-langkah menyiapkan dan menjalankan aplikasi secara lokal:
 
 ### 1. Persiapan Lingkungan
 Pastikan sudah menginstal:
-- [XAMPP](https://www.apachefriends.org/index.html) atau [Laragon](https://laragon.org/)
+- [Laragon](https://laragon.org/)
 - PHP versi 7.4 ke atas
 - MySQL aktif
 
@@ -118,9 +118,9 @@ if (!$koneksi) {
 ### 4. Menjalankan Aplikasi
 1. Simpan folder proyek ke direktori:
    ```
-   C:\xampp\htdocs\simasek
+   C:\laragon\www\simasek
    ```
-2. Jalankan **Apache** dan **MySQL** melalui XAMPP Control Panel.
+2. Jalankan **Apache** dan **MySQL** melalui Laragon.
 3. Buka browser dan akses:
    ```
    http://localhost/simasek
@@ -139,30 +139,6 @@ if (!$koneksi) {
 ### 👩‍🎓 Siswa
 - Login ke sistem.
 - Melihat biodata pribadi (nama, alamat, tanggal lahir, NIS, dll).
-
----
-
-## 📂 Struktur Folder (Contoh)
-```
-simasek/
-├── assets/
-│   ├── css/
-│   ├── js/
-│   └── images/
-├── database/
-│   └── simasek.sql
-├── includes/
-│   ├── config.php
-│   ├── header.php
-│   ├── footer.php
-├── pages/
-│   ├── dashboard.php
-│   ├── data_siswa.php
-│   ├── tambah_siswa.php
-│   └── edit_siswa.php
-├── index.php
-└── login.php
-```
 
 ---
 
