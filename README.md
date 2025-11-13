@@ -1,39 +1,70 @@
 # 🏫 SimaSek — Sistem Informasi Manajemen Data Siswa Sekolah
 
-**SimaSek** adalah aplikasi berbasis web yang bertujuan untuk memudahkan siswa dalam melihat biodata diri mereka serta membantu admin dalam mengelola data siswa dengan lebih cepat, terstruktur, dan efisien.  
-Dengan adanya sistem ini, proses pendataan siswa tidak lagi harus dilakukan secara manual, melainkan dapat diakses langsung melalui dashboard sederhana dan interaktif.
+**SimaSek** adalah aplikasi berbasis web yang dirancang untuk membantu sekolah dalam mengelola data siswa secara efisien, cepat, dan terstruktur.  
+Melalui sistem ini, admin dapat menambah, mengedit, dan menghapus data siswa dengan mudah, sementara siswa dapat melihat biodata pribadinya secara langsung melalui antarmuka yang sederhana dan interaktif.
 
 ---
 
 ## ✨ Fitur Utama
 
 ### 🔐 1. Login Multiuser
-- Login sebagai **Admin** atau **Siswa**.
-- Autentikasi berbasis sesi untuk menjaga keamanan data.
+- Mendukung dua jenis pengguna: **Admin** dan **Siswa**.
+- Validasi login berbasis email dan password yang terenkripsi.
+- Sistem keamanan menggunakan session-based authentication.
 
 ### 🏠 2. Dashboard
-- Menampilkan total siswa yang terdaftar.
+- Menampilkan jumlah total siswa yang terdaftar di sistem.
 - Menampilkan daftar **10 siswa terbaru**.
-- Tampilan ringkas dan informatif untuk pengguna.
+- Menampilkan aktivitas terbaru dari tabel `aktivitas_terakhir` seperti penambahan, pembaruan, dan penghapusan data siswa.
 
 ### 👨‍🎓 3. Manajemen Data Siswa
-- Tambah siswa baru dengan form input sederhana.
-- **Nomor Induk Siswa (NIS)** dibuat otomatis oleh sistem.
-- Edit dan hapus data siswa.
-- Menampilkan daftar siswa dalam bentuk tabel yang mudah dibaca.
+- Admin dapat menambahkan siswa baru melalui form input sederhana.
+- **Nomor Induk Siswa (NIS)** dihasilkan secara otomatis oleh sistem.
+- Fitur edit dan hapus data siswa tersedia dengan validasi aman.
+- Data siswa ditampilkan dalam bentuk tabel interaktif.
 
-### 🚪 4. Logout
-- Mengakhiri sesi pengguna untuk menjaga keamanan akses aplikasi.
+### 📜 4. Riwayat Aktivitas
+- Semua tindakan penting (seperti menambah, memperbarui, atau menghapus siswa) tercatat di tabel `aktivitas_terakhir`.
+- Fitur ini membantu admin memantau perubahan yang terjadi di sistem.
+
+### 🚪 5. Logout
+- Pengguna dapat keluar dari sistem dengan aman menggunakan tombol logout.
 
 ---
 
-## 🧱 Entitas yang Digunakan
+## 🧱 Struktur Database
 
-| Entitas | Deskripsi | Atribut Utama |
-|----------|------------|----------------|
-| **Admin** | Pengguna yang mengelola sistem | id_admin, username, password |
-| **Siswa** | Data siswa yang tersimpan dalam sistem | nis, nama, kelas, alamat, tanggal_lahir |
-| **User (Login)** | Menyimpan kredensial login multiuser | username, password, role |
+### Database Name: `simasek`
+
+Terdiri dari dua tabel utama:
+
+#### 1. Tabel `user`
+Menyimpan data semua pengguna (admin dan siswa).
+
+| Kolom | Tipe Data | Deskripsi |
+|--------|------------|------------|
+| `id` | INT (PK, AUTO_INCREMENT) | ID unik untuk setiap pengguna |
+| `role` | VARCHAR(100) | Peran pengguna (`admin` atau `siswa`) |
+| `email` | VARCHAR(100) | Email pengguna untuk login |
+| `password` | VARCHAR(100) | Password terenkripsi |
+| `nama_lengkap` | VARCHAR(100) | Nama lengkap pengguna |
+| `tempat_lahir` | VARCHAR(100) | Tempat lahir pengguna |
+| `tanggal_lahir` | DATE | Tanggal lahir pengguna |
+| `alamat` | VARCHAR(100) | Alamat pengguna |
+| `nis` | DECIMAL(8,0) | Nomor Induk Siswa unik |
+
+#### 2. Tabel `aktivitas_terakhir`
+Menyimpan log aktivitas dari admin (misalnya menambah atau menghapus siswa).
+
+| Kolom | Tipe Data | Deskripsi |
+|--------|------------|------------|
+| `id` | INT (PK, AUTO_INCREMENT) | ID unik aktivitas |
+| `action` | VARCHAR(255) | Deskripsi aktivitas yang dilakukan |
+
+Contoh data `aktivitas_terakhir`:
+- `Siswa baru ditambahkan: NIS 1250, Nama: fawijfoawj`
+- `Data siswa diperbarui: Ayu Lestari`
+- `Siswa dihapus: Stela Cantik`
 
 ---
 
@@ -41,41 +72,41 @@ Dengan adanya sistem ini, proses pendataan siswa tidak lagi harus dilakukan seca
 
 | Kategori | Teknologi |
 |-----------|------------|
-| **Frontend** | HTML, CSS, JavaScript |
-| **Backend** | PHP |
-| **Database** | MySQL |
-| **Desain UI/UX** | Figma |
-| **Server Environment (opsional)** | XAMPP / Laragon / LAMP |
+| **Frontend** | HTML, CSS, JavaScript (untuk interaktivitas form & validasi) |
+| **Backend** | PHP 8.1 |
+| **Database** | MySQL 8.0 |
+| **Server Environment** | XAMPP / Laragon / LAMP |
+| **UI/UX Design** | Figma |
 
 ---
 
 ## ⚙️ Setup Database
 
-Berikut langkah-langkah untuk menjalankan SimaSek secara lokal:
+Langkah-langkah menyiapkan dan menjalankan aplikasi secara lokal:
 
-### 1. Persiapan
+### 1. Persiapan Lingkungan
 Pastikan sudah menginstal:
 - [XAMPP](https://www.apachefriends.org/index.html) atau [Laragon](https://laragon.org/)
-- PHP 7.4 atau lebih baru
-- MySQL Server aktif
+- PHP versi 7.4 ke atas
+- MySQL aktif
 
 ### 2. Import Database
-1. Buka **phpMyAdmin** melalui browser (`http://localhost/phpmyadmin`).
-2. Buat database baru, misalnya:  
+1. Buka **phpMyAdmin** di browser (`http://localhost/phpmyadmin`).
+2. Buat database baru dengan nama:  
    ```
-   simasek_db
+   simasek
    ```
-3. Klik **Import**, lalu unggah file `simasek.sql` dari folder proyek (biasanya berada di `/database/simasek.sql`).
-4. Setelah proses import selesai, pastikan tabel seperti `admin`, `siswa`, dan `user` sudah terbentuk.
+3. Klik **Import** dan pilih file `simasek.sql`.
+4. Setelah berhasil diimport, pastikan tabel `user` dan `aktivitas_terakhir` muncul.
 
-### 3. Konfigurasi Koneksi
-Edit file konfigurasi (misalnya `config.php`) dengan menyesuaikan kredensial database:
+### 3. Konfigurasi File Koneksi
+Edit file `config.php` sesuai pengaturan lokal Anda:
 ```php
 <?php
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "simasek_db";
+$db   = "simasek";
 
 $koneksi = mysqli_connect($host, $user, $pass, $db);
 if (!$koneksi) {
@@ -84,13 +115,13 @@ if (!$koneksi) {
 ?>
 ```
 
-### 4. Jalankan Aplikasi
-1. Letakkan folder proyek ke direktori:
+### 4. Menjalankan Aplikasi
+1. Simpan folder proyek ke direktori:
    ```
    C:\xampp\htdocs\simasek
    ```
-2. Jalankan Apache dan MySQL di XAMPP.
-3. Akses aplikasi di browser melalui:
+2. Jalankan **Apache** dan **MySQL** melalui XAMPP Control Panel.
+3. Buka browser dan akses:
    ```
    http://localhost/simasek
    ```
@@ -100,17 +131,18 @@ if (!$koneksi) {
 ## 👥 Role Pengguna
 
 ### 👨‍💼 Admin
-- Login ke sistem.
-- Menginput, mengedit, dan menghapus data siswa.
-- Melihat jumlah siswa yang terdaftar.
+- Login ke sistem menggunakan email dan password.
+- Melihat daftar siswa.
+- Menambah, mengedit, dan menghapus data siswa.
+- Melihat riwayat aktivitas terakhir.
 
 ### 👩‍🎓 Siswa
 - Login ke sistem.
-- Melihat biodata diri yang sudah dimasukkan oleh admin.
+- Melihat biodata pribadi (nama, alamat, tanggal lahir, NIS, dll).
 
 ---
 
-## 📂 Struktur Direktori (Contoh)
+## 📂 Struktur Folder (Contoh)
 ```
 simasek/
 ├── assets/
@@ -134,12 +166,20 @@ simasek/
 
 ---
 
+## 🧩 Keamanan
+- Password disimpan dalam bentuk **hash (MD5 atau bcrypt)**.
+- Validasi input di sisi server dan klien untuk mencegah SQL Injection.
+- Sistem login menggunakan session PHP untuk memastikan keamanan akses.
+
+---
+
 ## 📜 Lisensi
-Proyek ini dikembangkan untuk keperluan pembelajaran dan dapat digunakan serta dimodifikasi secara bebas untuk pengembangan sistem informasi sekolah lainnya.
+Proyek ini dikembangkan untuk keperluan **pembelajaran dan penelitian**.  
+Diperbolehkan untuk dimodifikasi dan digunakan kembali untuk pengembangan sistem informasi sekolah lainnya.
 
 ---
 
 ## 💡 Kontributor
-Dikembangkan oleh tim pengembang **SimaSek** dengan tujuan meningkatkan efisiensi administrasi sekolah.
+Dikembangkan oleh tim pengembang **SimaSek** dengan tujuan meningkatkan efisiensi manajemen data sekolah.
 
 ---
